@@ -1,0 +1,116 @@
+.col-sm-9{
+     background-color: rgb(243, 246, 248);
+}
+
+.col-sm-4{
+     width: 31%;
+     height: 250px;
+     border: none;
+     border-radius: 10px;
+     background-color: white;
+     margin: 10px;
+}
+
+.info{
+     width: 85%;
+     justify-content: center;
+     margin: auto;
+     margin-top: 80px;
+}
+
+.image img{
+     width: 95%;
+     height: 350px;
+     justify-content: center;
+     margin: auto;
+     margin-top: -20px;
+}
+
+.input-icone{
+     margin-top: 15px;
+}
+
+.input-icone .recherche{
+     position: absolute;
+     margin-left: 30px;
+     margin-top: 10px;
+}
+
+.input-icone input{
+     position: relative;
+     background-color: transparent;
+     padding-left: 35px;
+     margin-left: 25px;
+     width: 70%;
+     height: 40px;
+     border-radius: 20px;
+     border:1px solid rgb(243, 246, 248) ;
+}
+
+ion-icon{
+     width: 25px;
+     height: 25px;
+}
+
+button{
+     border: none;
+     background-color: white;
+}
+
+.temperature{
+     font-size: 60px;
+     width: 85%;
+     margin: auto;
+     justify-content: center;
+}
+
+.date{
+     width: 85%;
+     margin: auto;
+     justify-content: center;
+     margin-bottom: -10px;
+     margin-top: -10px;
+}
+
+.description{
+     width: 85%;
+     margin: auto;
+     justify-content: center;
+     margin-top: 25px;
+}
+
+.city{
+     width: 85%;
+     height: 100px;
+     margin: auto;
+     justify-content: center;
+     border: none;
+     background-image: url(Images/pexels-josh-hild-2422461.jpg);
+     color: white;
+     text-align: center;
+     background-position: center;
+     background-size: cover;
+     border-radius: 20px;
+     margin-top: 30px;
+     margin-bottom: 30px;
+}
+
+.description ion-icon{
+     margin-right: 10px;
+}
+
+.description label{
+     margin-top: 0px;
+}
+
+hr{
+     color: rgb(243, 246, 248);
+}
+
+.col-sm-9 h1{
+     text-align: center;
+     margin-top: 30px;
+     font-size: 60px;
+}
+
+

@@ -1,47 +1,57 @@
 <?php
 
-session_start();
+if(!empty($_POST['ville']) && preg_match('#[A-Z a-z 0-9]{2,}#',$_POST['ville'])){
 
-$ville = $_POST['ville'];
+     session_start();
 
-$url = 'http://api.openweathermap.org/geo/1.0/direct?q='. $_POST['ville'] .'&limit=1&appid=d68b5e79df4aac83a103803c3e37c758';
+     $_POST['ville'] = htmlspecialchars($_POST['ville']);
+     $ville = $_POST['ville'];
 
-$curl = curl_init($url);
+     $url = 'http://api.openweathermap.org/geo/1.0/direct?q='. $_POST['ville'] .'&limit=1&appid=d68b5e79df4aac83a103803c3e37c758';
 
-curl_setopt($curl , CURLOPT_RETURNTRANSFER , true); 
+     $curl = curl_init($url);
 
-$api_result = curl_exec($curl);
+     curl_setopt($curl , CURLOPT_RETURNTRANSFER , true); 
 
-$api_result = json_decode($api_result,true);
+     $api_result = curl_exec($curl);
 
-curl_close($curl);
+     $api_result = json_decode($api_result,true);
 
-//var_dump($api_result);
+     curl_close($curl);
 
-//echo $api_result[0]['lat'];
+     //var_dump($api_result);
 
-$url2 = 'https://api.openweathermap.org/data/2.5/weather?lat='. $api_result[0]['lat'] .'&lon='. $api_result[0]['lon'] .'&appid=d68b5e79df4aac83a103803c3e37c758';
+     //echo $api_result[0]['lat'];
 
-$newCurl = curl_init($url2);
+     $url2 = 'https://api.openweathermap.org/data/2.5/weather?lat='. $api_result[0]['lat'] .'&lon='. $api_result[0]['lon'] .'&exclude=hourly,daily&appid=d68b5e79df4aac83a103803c3e37c758';
 
-curl_setopt($newCurl , CURLOPT_SSL_VERIFYPEER , false);
+     $newCurl = curl_init($url2);
 
-curl_setopt($newCurl , CURLOPT_RETURNTRANSFER , true); 
+     curl_setopt($newCurl , CURLOPT_SSL_VERIFYPEER , false);
 
-$result = curl_exec($newCurl);
+     curl_setopt($newCurl , CURLOPT_RETURNTRANSFER , true); 
 
-if ($result === false) {
-    echo 'Erreur curl : ' . curl_error($newCurl);
-} else {
-     $result = json_decode($result , true);
-     //var_dump($result);
-     $_SESSION['description'] = $result['weather'][0]['description'];
-     $_SESSION['temperature'] = $result['main']['temp'];
+     $result = curl_exec($newCurl);
 
-     $_SESSION['alertDescription'] = $result['alerts']['description'];
+     if ($result === false) {
+     echo 'Erreur curl : ' . curl_error($newCurl);
+     } else {
+          $result = json_decode($result , true);
+          var_dump($result);
+          $_SESSION['description'] = $result['weather'][0]['description'];
+          $_SESSION['temperature'] = $result['main']['temp'];
+          $_SESSION['sunrise'] = $result['sys']['sunrise'];
+          $_SESSION['sunset'] = $result['sys']['sunset'];
+          $_SESSION['vent'] = $result['wind']['speed'];
+          $_SESSION['temp_min'] = $result['main']['temp_min'];
+          $_SESSION['temp_max'] = $result['main']['temp_max'];
+          $_SESSION['humidite'] = $result['main']['humidity'];
+          $_SESSION['visibilite'] = $result['visibility'];
+          
+          //echo $_SESSION['temperature'] .' et '.$_SESSION['description'];
+          //header('Location:index.php');
+     }
 
-     //echo $_SESSION['temperature'] .' et '.$_SESSION['description'];
-     header('Location:index.php');
+     curl_close($newCurl);
+
 }
-
-curl_close($newCurl);
