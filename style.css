@@ -9,6 +9,7 @@
      border-radius: 10px;
      background-color: white;
      margin: 10px;
+     padding: 25px 0 0 25px;
 }
 
 .info{
@@ -113,4 +114,44 @@ hr{
      font-size: 60px;
 }
 
+.ligne{
+     display: flex;
+}
+
+.ligne img{
+     width: 30px;
+     height: 30px;
+     margin-right: 10px;
+}
+
+.ligne p{
+     margin-top: 50px;
+}
+
+h2{
+     font-size: 70px;
+}
+
+.haut{
+     margin: 20px 0;
+}
+
+.lignes img{
+     width: 30px;
+     height: 30px;
+     margin-right: 10px;
+}
+
+.lignes p{
+     margin-top: 50px;
+}
+
+.lignes{
+     display: flex;
+     margin: 20px 0 0 0;
+}
+
+h5{
+     margin-bottom: -10px;
+}
 

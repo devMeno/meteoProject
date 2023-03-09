@@ -36,14 +36,90 @@
                     <h1>Today's weather forecast</h1>
                     <div class="info">
                          <div class="row">
-                              <div class="col-sm-4">Humidity</div>
-                              <div class="col-sm-4">Visibility</div>
-                              <div class="col-sm-4">Wind Status</div>
+                              <div class="col-sm-4">
+                                   <p>Humidity</p>
+                                   <div class="ligne haut">
+                                        <h2>12</h2>
+                                        <p>%</p>
+                                   </div>
+                                   <div class="ligne">
+                                        <h4>Normal</h4>
+                                   </div>
+                              </div>
+                              <div class="col-sm-4">
+                                   <p>Visibility</p>
+                                   <div class="ligne haut">
+                                        <h2>5.2</h2>
+                                        <p>km</p>
+                                   </div>
+                                   <div class="ligne">
+                                        <h4>Average</h4>
+                                   </div>
+                              </div>
+                              <div class="col-sm-4">
+                                   <p>Wind Status</p>
+                                   <div class="ligne haut">
+                                        <h2>7.70</h2>
+                                        <p>km/h</p>
+                                   </div>
+                                   <div class="ligne">
+                                        <img src="Images/Capture_d_écran_2023-03-08_170056-removebg-preview.png" alt="logo">
+                                        <h4>WSW</h4>
+                                   </div>
+                              </div>
                          </div>
                          <div class="row">
-                              <div class="col-sm-4">Sunrise & Sunset</div>
-                              <div class="col-sm-4">Temp min & max</div>
-                              <div class="col-sm-4">Quelque chose</div>
+                              <div class="col-sm-4">
+                                   <p>Sunrise & Sunset</p>
+                                   <div class="lignes">
+                                        <img src="Images/Capture_d_écran_2023-03-08_170056-removebg-preview.png" alt="logo">
+                                        <div class="pile">
+                                             <h5>6:35 AM</h5>
+                                             <small>-1m 46s</small>
+                                        </div>
+                                   </div>
+                                   <div class="lignes">
+                                        <img src="Images/Capture_d_écran_2023-03-08_170056-removebg-preview.png" alt="logo">
+                                        <div class="pile">
+                                             <h5>5:55 PM</h5>
+                                             <small>+2m 22s</small>
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="col-sm-4">
+                                   <p>Temp min & max</p>
+                                   <div class="lignes">
+                                        <img src="Images/Capture_d_écran_2023-03-08_170056-removebg-preview.png" alt="logo">
+                                        <div class="pile">
+                                             <h5>6:35 AM</h5>
+                                             <small>-1m 46s</small>
+                                        </div>
+                                   </div>
+                                   <div class="lignes">
+                                        <img src="Images/Capture_d_écran_2023-03-08_170056-removebg-preview.png" alt="logo">
+                                        <div class="pile">
+                                             <h5>5:55 PM</h5>
+                                             <small>+2m 22s</small>
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="col-sm-4">
+                                   <p>Quelque chose</p>
+                                   <div class="lignes">
+                                        <img src="Images/Capture_d_écran_2023-03-08_170056-removebg-preview.png" alt="logo">
+                                        <div class="pile">
+                                             <h5>6:35 AM</h5>
+                                             <small>-1m 46s</small>
+                                        </div>
+                                   </div>
+                                   <div class="lignes">
+                                        <img src="Images/Capture_d_écran_2023-03-08_170056-removebg-preview.png" alt="logo">
+                                        <div class="pile">
+                                             <h5>5:55 PM</h5>
+                                             <small>+2m 22s</small>
+                                        </div>
+                                   </div>
+                              </div>
                          </div>
                     </div>
                </div>
