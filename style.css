@@ -3,7 +3,7 @@
 }
 
 .col-sm-4{
-     width: 31%;
+     width: 90%;
      height: 250px;
      border: none;
      border-radius: 10px;
@@ -94,6 +94,7 @@ button{
      border-radius: 20px;
      margin-top: 30px;
      margin-bottom: 30px;
+     padding-top: 30px;
 }
 
 .description ion-icon{
@@ -142,8 +143,15 @@ h2{
      margin-right: 10px;
 }
 
+.lignes svg{
+     width: 30px;
+     height: 30px;
+     margin-right: 10px;
+}
+
 .lignes p{
      margin-top: 50px;
+     margin-top: 30px;
 }
 
 .lignes{
@@ -152,6 +160,82 @@ h2{
 }
 
 h5{
-     margin-bottom: -10px;
+     margin-bottom: -5px;
 }
 
+.line{
+     margin-bottom: 40px;
+}
+
+.inforow{
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media screen and (min-width:700px) and (max-width:1000px) {
+     .inforow{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+     }
+}
+
+@media screen and (max-width:700px) {
+     .inforow{
+          display: grid;
+          grid-template-columns: 1fr;
+     }
+
+     
+}
+
+@media screen and (max-width:1000px) {
+     .tout{
+          display: grid;
+          grid-template-columns: 1fr;
+     }
+
+     .col-sm-3{
+          width: 100%;
+     }
+
+     .col-sm-9{
+          width: 100%;
+     }
+
+     form{
+          width: 90%;
+          justify-content: center;
+          margin: auto;
+     }
+
+     .input-icone{
+          width: 100%;
+     }
+
+     body{
+          padding-bottom: 15px;
+     }
+}
+
+@media screen and (min-width:550px) and (max-width:1000px) {
+     .center{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+     }
+
+     .picture{
+          width: 75%;
+          margin: auto;
+          justify-content: center;
+     }
+
+     .maininfo{
+          width: 75%;
+          margin: auto;
+          justify-content: center;
+     }
+
+     .input-icone input{
+          width: 85%;
+     }
+}
