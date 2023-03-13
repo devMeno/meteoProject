@@ -14,7 +14,7 @@
      <div class="container-fluid">
           <div class="row tout">
                <div class="col-sm-3">
-                    <form action="meteo.php" method="post">
+                    <form action="meteo.php" method="post" id="pays">
                          <div class="input-icone">
                               <ion-icon name="search-outline" class="recherche"></ion-icon>
                               <input type="text" placeholder="Search for places..." name="ville" class="search">
@@ -156,5 +156,7 @@
 
      <script  type = "module"  src = "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"> </script> 
      <script  nomodule  src = "https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js"> </script>
+     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+     <script src="index.js"></script>
 </body>
 </html>

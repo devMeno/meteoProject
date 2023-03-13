@@ -50,6 +50,20 @@ if(!empty($_POST['ville']) && preg_match('#[A-Z a-z 0-9]{2,}#',$_POST['ville']))
           
           //echo $_SESSION['temperature'] .' et '.$_SESSION['description'];
           //header('Location:index.php');
+
+          $reponse = array(
+               'description' => $_SESSION['description'],
+               'temperature' => $_SESSION['temperature'],
+               'sunrise' => $_SESSION['sunrise'],
+               'sunset' => $_SESSION['sunset'],
+               'vent' => $_SESSION['vent'],
+               'temp_min' => $_SESSION['temp_min'],
+               'temp_max' => $_SESSION['temp_max'],
+               'humidite' => $_SESSION['humidite'],
+               'visibilite' => $_SESSION['visibilite']
+          );
+
+          return $reponse;
      }
 
      curl_close($newCurl);
