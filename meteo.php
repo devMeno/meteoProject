@@ -1,4 +1,11 @@
 <?php
+
+function conversion($var){
+     $var = strval($var);
+     $var = substr($var,0,6);
+
+     return $var;
+}
 if(!empty($_POST['ville']) && preg_match('#[A-Z a-z 0-9]{2,}#',$_POST['ville'])){
 
      session_start();
@@ -51,14 +58,14 @@ if(!empty($_POST['ville']) && preg_match('#[A-Z a-z 0-9]{2,}#',$_POST['ville']))
 
           $reponse = array(
                'description' => $_SESSION['description'],
-               'temperature' => $_SESSION['temperature'] - 273.15,
+               'temperature' => conversion($_SESSION['temperature'] - 273.15),
                'sunrise' => $_SESSION['sunrise'],
                'sunset' => $_SESSION['sunset'],
                'vent' => $_SESSION['vent'],
-               'temp_min' => $_SESSION['temp_min'],
-               'temp_max' => $_SESSION['temp_max'],
+               'temp_min' => conversion($_SESSION['temp_min']),
+               'temp_max' => conversion($_SESSION['temp_max']),
                'humidite' => $_SESSION['humidite'],
-               'visibilite' => $_SESSION['visibilite'],
+               'visibilite' => $_SESSION['visibilite']/1000,
                'longitude' => $_SESSION['longitude'],
                'latitude' => $_SESSION['latitude'],
                'ville' => $_SESSION['ville']
