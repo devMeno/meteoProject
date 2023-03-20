@@ -1,5 +1,4 @@
 <?php
-
 if(!empty($_POST['ville']) && preg_match('#[A-Z a-z 0-9]{2,}#',$_POST['ville'])){
 
      session_start();
@@ -19,9 +18,6 @@ if(!empty($_POST['ville']) && preg_match('#[A-Z a-z 0-9]{2,}#',$_POST['ville']))
 
      curl_close($curl);
 
-     //var_dump($api_result);
-
-     //echo $api_result[0]['lat'];
 
      $url2 = 'https://api.openweathermap.org/data/2.5/weather?lat='. $api_result[0]['lat'] .'&lon='. $api_result[0]['lon'] .'&exclude=hourly,daily&appid=d68b5e79df4aac83a103803c3e37c758';
 
@@ -37,7 +33,6 @@ if(!empty($_POST['ville']) && preg_match('#[A-Z a-z 0-9]{2,}#',$_POST['ville']))
      echo 'Erreur curl : ' . curl_error($newCurl);
      } else {
           $result = json_decode($result , true);
-          var_dump($result);
           $_SESSION['description'] = $result['weather'][0]['description'];
           $_SESSION['temperature'] = $result['main']['temp'];
           $_SESSION['sunrise'] = $result['sys']['sunrise'];
@@ -47,23 +42,28 @@ if(!empty($_POST['ville']) && preg_match('#[A-Z a-z 0-9]{2,}#',$_POST['ville']))
           $_SESSION['temp_max'] = $result['main']['temp_max'];
           $_SESSION['humidite'] = $result['main']['humidity'];
           $_SESSION['visibilite'] = $result['visibility'];
+          $_SESSION['longitude'] = $result['coord']['lon'];
+          $_SESSION['latitude'] = $result['coord']['lat'];
+          $_SESSION['ville'] = $result['name'];
           
           //echo $_SESSION['temperature'] .' et '.$_SESSION['description'];
           //header('Location:index.php');
 
           $reponse = array(
                'description' => $_SESSION['description'],
-               'temperature' => $_SESSION['temperature'],
+               'temperature' => $_SESSION['temperature'] - 273.15,
                'sunrise' => $_SESSION['sunrise'],
                'sunset' => $_SESSION['sunset'],
                'vent' => $_SESSION['vent'],
                'temp_min' => $_SESSION['temp_min'],
                'temp_max' => $_SESSION['temp_max'],
                'humidite' => $_SESSION['humidite'],
-               'visibilite' => $_SESSION['visibilite']
+               'visibilite' => $_SESSION['visibilite'],
+               'longitude' => $_SESSION['longitude'],
+               'latitude' => $_SESSION['latitude'],
+               'ville' => $_SESSION['ville']
           );
-
-          return $reponse;
+          echo json_encode($reponse);
      }
 
      curl_close($newCurl);

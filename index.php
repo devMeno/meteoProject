@@ -17,7 +17,7 @@
                     <form action="meteo.php" method="post" id="pays">
                          <div class="input-icone">
                               <ion-icon name="search-outline" class="recherche"></ion-icon>
-                              <input type="text" placeholder="Search for places..." name="ville" class="search">
+                              <input type="text" placeholder="Search for places..." name="ville" class="search" id="ville">
                               <button type="reset"><ion-icon name="close-circle-outline" class="reset"></ion-icon></button>
                          </div>
                     </form>
@@ -28,7 +28,7 @@
                               </div>
                          </div>
                          <div class="maininfo">
-                              <div class="temperature">12°C</div>
+                              <div class="temperature"><span id="temp">12</span>°C</div>
                               <div class="date">Monday,<em>16:00</em></div><hr>
                               <div class="description">
                                    <ion-icon name="partly-sunny-outline" id="descr"></ion-icon><label for="descr">Mostly Cloudy</label><br>
@@ -36,16 +36,16 @@
                               </div>
                          </div>
                     </div>
-                    <div class="city"><h3>Ville</h3></div>
+                    <div class="city"><h3 id="city">Ville</h3></div>
                </div>
                <div class="col-sm-9">
-                    <h1>Today's weather forecast</h1>
+                    <h1 id="h1">Today's weather forecast</h1>
                     <div class="info">
                          <div class="row inforow">
                               <div class="col-sm-4">
                                    <p>Humidity</p>
                                    <div class="ligne haut">
-                                        <h2>12</h2>
+                                        <h2 id="humidity">12</h2>
                                         <p>%</p>
                                    </div>
                                    <div class="ligne">
@@ -55,7 +55,7 @@
                               <div class="col-sm-4">
                                    <p>Visibility</p>
                                    <div class="ligne haut">
-                                        <h2>5.2</h2>
+                                        <h2 id="visibility">5.2</h2>
                                         <p>km</p>
                                    </div>
                                    <div class="ligne">
@@ -65,7 +65,7 @@
                               <div class="col-sm-4">
                                    <p>Wind Status</p>
                                    <div class="ligne haut">
-                                        <h2>7.70</h2>
+                                        <h2 id="wind">7.70</h2>
                                         <p>km/h</p>
                                    </div>
                                    <div class="ligne">
@@ -81,7 +81,7 @@
                                              <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
                                         </svg>
                                         <div class="pile">
-                                             <h5>6:35 AM</h5>
+                                             <h5><span id="sunrise">6:35</span> AM</h5>
                                              <small>-1m 46s</small>
                                         </div>
                                    </div>
@@ -90,7 +90,7 @@
                                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
                                         </svg>
                                         <div class="pile">
-                                             <h5>5:55 PM</h5>
+                                             <h5><span id="sunset">5:55</span> PM</h5>
                                              <small>+2m 22s</small>
                                         </div>
                                    </div>
@@ -100,13 +100,13 @@
                                    <div class="lignes">
                                         <img src="Images/thermometer-temperature-control-tool.png" alt="logo">
                                         <div class="pile">
-                                             <h5>28.3°C</h5>
+                                             <h5><span id="min">28.3</span>°C</h5>
                                         </div>
                                    </div>
                                    <div class="lignes">
                                         <img src="Images/thermometer-temperature-control-tool.png" alt="logo">
                                         <div class="pile">
-                                             <h5>30°C</h5>
+                                             <h5><span id="max">30</span>°C</h5>
                                         </div>
                                    </div>
                               </div>
@@ -118,7 +118,7 @@
                                         </svg>
                                         <div class="pile">
                                              <h5>Longitude</h5>
-                                             <small>2.32</small>
+                                             <small id="long">2.32</small>
                                         </div>
                                    </div>
                                    <div class="lignes">
@@ -127,7 +127,7 @@
                                         </svg>
                                         <div class="pile">
                                              <h5>Latitude</h5>
-                                             <small>48.8589</small>
+                                             <small id="lat">48.8589</small>
                                         </div>
                                    </div>
                               </div>
