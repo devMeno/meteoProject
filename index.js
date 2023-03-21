@@ -20,8 +20,10 @@ document.getElementById("pays").addEventListener("submit", function (event) {
       document.getElementById("lat").innerText = object.latitude;
       document.getElementById("city").innerText = object.ville;
       document.getElementById("temp").innerText = object.temperature;
+      document.getElementById("description").innerText = object.description;
+      document.getElementById("date").innerText = object.date;
     } else {
-      //  alert("Une erreur est survenue");
+      alert("Une erreur est survenue");
     }
   };
   xhr.send(formData);

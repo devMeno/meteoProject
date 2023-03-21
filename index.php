@@ -7,7 +7,7 @@
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-     <title>Document</title>
+     <title>Today's weather</title>
      <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,21 +17,21 @@
                     <form action="meteo.php" method="post" id="pays">
                          <div class="input-icone">
                               <ion-icon name="search-outline" class="recherche"></ion-icon>
-                              <input type="text" placeholder="Search for places..." name="ville" class="search" id="ville">
+                              <input type="text" placeholder="Search a city..." name="ville" class="search" id="ville">
                               <button type="reset"><ion-icon name="close-circle-outline" class="reset"></ion-icon></button>
                          </div>
                     </form>
                     <div class="center">
                          <div class="picture">
                               <div class="image">
-                                   <img src="Images/photo_2023-03-08_13-40-46-removebg.png" alt="Photo">
+                                   <img src="Images/Capture_d_écran_2023-03-21_022656-removebg-preview.png" alt="Photo">
                               </div>
                          </div>
                          <div class="maininfo">
                               <div class="temperature"><span id="temp">12</span>°C</div>
-                              <div class="date">Monday,<em>16:00</em></div><hr>
+                              <div class="date" id="date">Monday,<em>16:00</em></div><hr>
                               <div class="description">
-                                   <ion-icon name="partly-sunny-outline" id="descr"></ion-icon><label for="descr">Mostly Cloudy</label><br>
+                                   <ion-icon name="partly-sunny-outline" id="descr"></ion-icon><label for="descr" id="description">Mostly Cloudy</label><br>
                                    <ion-icon name="rainy-outline" id="rain"></ion-icon><label for="rain">Rain - <em>30%</em></label>
                               </div>
                          </div>

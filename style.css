@@ -21,10 +21,11 @@
 
 .image img{
      width: 95%;
-     height: 350px;
+     height: 340px;
      justify-content: center;
      margin: auto;
      margin-top: -20px;
+     margin-top: 10px;
 }
 
 .input-icone{

@@ -6,9 +6,8 @@ function conversion($var){
 
      return $var;
 }
-if(!empty($_POST['ville']) && preg_match('#[A-Z a-z 0-9]{2,}#',$_POST['ville'])){
 
-     session_start();
+if(!empty($_POST['ville']) && preg_match('#[A-Z a-z 0-9]{2,}#',$_POST['ville'])){
 
      $_POST['ville'] = htmlspecialchars($_POST['ville']);
      $ville = $_POST['ville'];
@@ -40,35 +39,21 @@ if(!empty($_POST['ville']) && preg_match('#[A-Z a-z 0-9]{2,}#',$_POST['ville']))
      echo 'Erreur curl : ' . curl_error($newCurl);
      } else {
           $result = json_decode($result , true);
-          $_SESSION['description'] = $result['weather'][0]['description'];
-          $_SESSION['temperature'] = $result['main']['temp'];
-          $_SESSION['sunrise'] = $result['sys']['sunrise'];
-          $_SESSION['sunset'] = $result['sys']['sunset'];
-          $_SESSION['vent'] = $result['wind']['speed'];
-          $_SESSION['temp_min'] = $result['main']['temp_min'];
-          $_SESSION['temp_max'] = $result['main']['temp_max'];
-          $_SESSION['humidite'] = $result['main']['humidity'];
-          $_SESSION['visibilite'] = $result['visibility'];
-          $_SESSION['longitude'] = $result['coord']['lon'];
-          $_SESSION['latitude'] = $result['coord']['lat'];
-          $_SESSION['ville'] = $result['name'];
-          
-          //echo $_SESSION['temperature'] .' et '.$_SESSION['description'];
-          //header('Location:index.php');
 
           $reponse = array(
-               'description' => $_SESSION['description'],
-               'temperature' => conversion($_SESSION['temperature'] - 273.15),
-               'sunrise' => $_SESSION['sunrise'],
-               'sunset' => $_SESSION['sunset'],
-               'vent' => $_SESSION['vent'],
-               'temp_min' => conversion($_SESSION['temp_min']),
-               'temp_max' => conversion($_SESSION['temp_max']),
-               'humidite' => $_SESSION['humidite'],
-               'visibilite' => $_SESSION['visibilite']/1000,
-               'longitude' => $_SESSION['longitude'],
-               'latitude' => $_SESSION['latitude'],
-               'ville' => $_SESSION['ville']
+               'description' => $result['weather'][0]['description'],
+               'temperature' => conversion($result['main']['temp'] - 273.15),
+               'sunrise' => $result['sys']['sunrise'],
+               'sunset' => $result['sys']['sunset'],
+               'vent' => $result['wind']['speed'],
+               'temp_min' => conversion($result['main']['temp_min']),
+               'temp_max' => conversion($result['main']['temp_max']),
+               'humidite' => $result['main']['humidity'],
+               'visibilite' => $result['visibility']/1000,
+               'longitude' => $result['coord']['lon'],
+               'latitude' => $result['coord']['lat'],
+               'ville' => ucfirst($_POST['ville']),
+               'date' => date("F j, Y - g:i a")
           );
           echo json_encode($reponse);
      }
